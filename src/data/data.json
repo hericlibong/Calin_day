@@ -1,0 +1,64 @@
+{
+    "title": "Le Temps des Solitudes",
+    "subtitle": "Un regard sur l'isolement en France",
+    "steps": [
+        {
+            "id": "intro",
+            "text": "Le 21 janvier, c'est la journée mondiale du câlin. Une occasion de parler de lien, mais surtout de ceux qui en manquent.",
+            "vizType": "intro",
+            "ref_status": "ok",
+            "ref_label": "Introduction"
+        },
+        {
+            "id": "stat-1",
+            "text": "Selon la Fondation de France, 11 millions de personnes se sentent seules en France.",
+            "vizType": "bubbles",
+            "dataValue": 11000000,
+            "ref_status": "ok",
+            "ref_label": "Rapport Solitudes 2024, p.12"
+        },
+        {
+            "id": "stat-2",
+            "text": "Cette solitude touche particulièrement les jeunes : 1 sur 5 déclare souffrir d'isolement.",
+            "vizType": "chart_age",
+            "ref_status": "to_check",
+            "ref_label": "Chiffre à confirmer (étude en cours)"
+        },
+        {
+            "id": "face-1",
+            "text": "Derrière les chiffres, il y a des visages. Comme celui de Marc, 74 ans, qui ne parle parfois à personne pendant plusieurs jours.",
+            "vizType": "portrait",
+            "mediaUrl": "placeholder_marc.jpg",
+            "ref_status": "ok",
+            "ref_label": "Témoignage recueilli"
+        },
+        {
+            "id": "stat-3",
+            "text": "L'isolement n'est pas qu'un sentiment : c'est une absence de réseaux de sociabilité (famille, amis, voisins, collègues).",
+            "vizType": "network_void",
+            "ref_status": "ok",
+            "ref_label": "Définition FdF"
+        },
+        {
+            "id": "stat-4",
+            "text": "En 2024, la précarité aggrave la situation. Les personnes aux revenus modestes sont 3x plus exposées.",
+            "vizType": "bar_poverty",
+            "ref_status": "to_check",
+            "ref_label": "Tableau 4.2 (consolidation)"
+        },
+        {
+            "id": "conclusion",
+            "text": "Alors en cette journée du câlin, n'oublions pas : un geste simple peut rompre, même un instant, le temps des solitudes.",
+            "vizType": "conclusion",
+            "ref_status": "ok",
+            "ref_label": "Conclusion"
+        },
+        {
+            "id": "credits",
+            "text": "Une narration basée sur les données de la Fondation de France.",
+            "vizType": "credits",
+            "ref_status": "ok",
+            "ref_label": ""
+        }
+    ]
+}
