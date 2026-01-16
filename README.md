@@ -230,7 +230,7 @@ Ce projet est développé dans le cadre d'une sensibilisation au phénomène de 
 
 ## 🔗 Ressources
 
-- [Fondation de France - Rapport Solitudes](https://www.fondationdefrance.org)
+- [Fondation de France - Rapport Solitudes 2024](https://www.fondationdefrance.org/fr/rapport-solitudes-2024)
 - [Journée mondiale du câlin - 21 janvier](https://fr.wikipedia.org/wiki/Journ%C3%A9e_mondiale_du_c%C3%A2lin)
 - [Scrollama.js](https://github.com/russellsamora/scrollama)
 - [D3.js Documentation](https://d3js.org/)
