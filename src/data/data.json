@@ -5,9 +5,26 @@
         {
             "id": "intro",
             "text": "Le 21 janvier, c'est la journée mondiale du câlin. Une occasion de parler de lien, mais surtout de ceux qui en manquent.",
-            "vizType": "intro",
+            "vizType": "hero_figures",
+            "figures": [
+                {
+                    "val": 12,
+                    "label": "Isolement",
+                    "suffix": "%"
+                },
+                {
+                    "val": 24,
+                    "label": "Solitude",
+                    "suffix": "%"
+                },
+                {
+                    "val": 33,
+                    "label": "Abandon",
+                    "suffix": "%"
+                }
+            ],
             "ref_status": "ok",
-            "ref_label": "Introduction"
+            "ref_label": "Fondation de France — Solitudes 2024"
         },
         {
             "id": "stat-1",

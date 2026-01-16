@@ -6,13 +6,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-dark': '#1a1a1a',
-                'brand-gray': '#f5f5f5',
-                'brand-accent': '#e63946', // A soft red for the 'Câlin'/heart theme maybe, or keep it neutral
+                'brand-bg': '#f0f4f8', // Cool slate/blue tint
+                'brand-ink': '#1e293b', // Slate 800 - Deep and readable
+                'brand-accent': '#d90429', // Strong Red
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                serif: ['Merriweather', 'Georgia', 'serif'],
+                sans: ['Lato', 'system-ui', 'sans-serif'],
+                serif: ['Playfair Display', 'Georgia', 'serif'],
             }
         },
     },
