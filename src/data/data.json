@@ -1,81 +1,241 @@
 {
     "title": "Le Temps des Solitudes",
     "subtitle": "Un regard sur l'isolement en France",
+    "sources": [],
     "steps": [
         {
-            "id": "intro",
-            "text": "Le 21 janvier, c'est la journée mondiale du câlin. Une occasion de parler de lien, mais surtout de ceux qui en manquent.",
-            "vizType": "hero_figures",
-            "figures": [
-                {
-                    "val": 12,
-                    "label": "Isolement",
-                    "suffix": "%"
-                },
-                {
-                    "val": 24,
-                    "label": "Solitude",
-                    "suffix": "%"
-                },
-                {
-                    "val": 33,
-                    "label": "Abandon",
+            "id": "cover",
+            "stepNumber": 0,
+            "title": "Ouverture",
+            "body": "Le 21 janvier marque la journée mondiale du câlin. Un symbole de chaleur humaine qui, par contraste, révèle l'ampleur de nos solitudes.",
+            "visual": {
+                "type": "cover",
+                "data": null
+            },
+            "integrity": "extracted",
+            "ref": {
+                "label": "Ouverture"
+            }
+        },
+        {
+            "id": "hero",
+            "stepNumber": 1,
+            "title": "Le paradoxe",
+            "body": "Trois chiffres pour mesurer l’absence.",
+            "visual": {
+                "type": "hero_figures",
+                "data": {
+                    "figures": [
+                        {
+                            "val": 12,
+                            "label": "Isolement",
+                            "suffix": "%"
+                        },
+                        {
+                            "val": 24,
+                            "label": "Solitude",
+                            "suffix": "%"
+                        },
+                        {
+                            "val": 33,
+                            "label": "Abandon",
+                            "suffix": "%"
+                        }
+                    ]
+                }
+            },
+            "integrity": "extracted",
+            "ref": {
+                "label": "Rapport Solitudes 2024"
+            }
+        },
+        {
+            "id": "definitions",
+            "stepNumber": 2,
+            "title": "Nuances",
+            "body": "L'isolement est objectif : c'est l'absence de relations. La solitude est subjective : c'est le sentiment de manquer de lien. Les deux ne se recoupent pas toujours.",
+            "visual": {
+                "type": "definitions",
+                "data": {
+                    "left": {
+                        "term": "Isolement",
+                        "def": "Absence de réseaux sociaux (famille, amis, voisins...)"
+                    },
+                    "right": {
+                        "term": "Solitude",
+                        "def": "Sentiment de souffrir de manque de relations."
+                    }
+                }
+            },
+            "integrity": "verified",
+            "ref": {
+                "label": "Définitions FdF"
+            }
+        },
+        {
+            "id": "revenue",
+            "stepNumber": 3,
+            "title": "Inégalité",
+            "body": "La pauvreté est un accélérateur d'isolement. Les bas revenus sont deux fois plus exposés à l'absence totale de réseau.",
+            "visual": {
+                "type": "barSimple",
+                "data": [
+                    {
+                        "label": "Revenus > 4000€",
+                        "value": 7,
+                        "color": "#cbd5e1"
+                    },
+                    {
+                        "label": "Revenus < 1000€",
+                        "value": 17,
+                        "color": "#d90429"
+                    }
+                ],
+                "options": {
+                    "layout": "horizontal",
                     "suffix": "%"
                 }
-            ],
-            "ref_status": "ok",
-            "ref_label": "Fondation de France — Solitudes 2024"
+            },
+            "integrity": "verified",
+            "ref": {
+                "label": "Rapport 2024, Fig 4.2"
+            }
         },
         {
-            "id": "stat-1",
-            "text": "Selon la Fondation de France, 11 millions de personnes se sentent seules en France.",
-            "vizType": "bubbles",
-            "dataValue": 11000000,
-            "ref_status": "ok",
-            "ref_label": "Rapport Solitudes 2024, p.12"
+            "id": "seasons",
+            "stepNumber": 4,
+            "title": "Moments",
+            "body": "Il y a des temps plus durs que d'autres. L'hiver et les fêtes de fin d'année cristallisent le sentiment de solitude.",
+            "visual": {
+                "type": "stackNumbers",
+                "data": [
+                    {
+                        "value": 38,
+                        "label": "Ressentent plus de solitude en Hiver",
+                        "suffix": "%"
+                    },
+                    {
+                        "value": 33,
+                        "label": "Pendant les fêtes",
+                        "suffix": "%"
+                    }
+                ]
+            },
+            "integrity": "extracted",
+            "ref": {
+                "label": "Sondage Crédoc"
+            }
         },
         {
-            "id": "stat-2",
-            "text": "Cette solitude touche particulièrement les jeunes : 1 sur 5 déclare souffrir d'isolement.",
-            "vizType": "chart_age",
-            "ref_status": "to_check",
-            "ref_label": "Chiffre à confirmer (étude en cours)"
+            "id": "age_sentiment",
+            "stepNumber": 5,
+            "title": "Générations",
+            "body": "Contrairement aux idées reçues, ce ne sont pas les plus âgés qui se sentent le plus seuls, mais les jeunes adultes, en pleine transition de vie.",
+            "visual": {
+                "type": "lineOrDot",
+                "data": [
+                    {
+                        "label": "- 25 ans",
+                        "value": 28
+                    },
+                    {
+                        "label": "25-39 ans",
+                        "value": 35,
+                        "highlight": true
+                    },
+                    {
+                        "label": "60-69 ans",
+                        "value": 18
+                    },
+                    {
+                        "label": "+ 70 ans",
+                        "value": 16
+                    }
+                ],
+                "options": {
+                    "yLabel": "Sentiment de solitude (%)"
+                }
+            },
+            "integrity": "to_check",
+            "ref": {
+                "label": "Données en consolidation"
+            }
         },
         {
-            "id": "face-1",
-            "text": "Derrière les chiffres, il y a des visages. Comme celui de Marc, 74 ans, qui ne parle parfois à personne pendant plusieurs jours.",
-            "vizType": "portrait",
-            "mediaUrl": "placeholder_marc.jpg",
-            "ref_status": "ok",
-            "ref_label": "Témoignage recueilli"
+            "id": "age_isolation",
+            "stepNumber": 6,
+            "title": "Réalité",
+            "body": "Pourtant, l'isolement relationnel objectif (ne voir personne) touche davantage les seniors. Le sentiment et la réalité divergent.",
+            "visual": {
+                "type": "barSimple",
+                "data": [
+                    {
+                        "label": "- 25 ans",
+                        "value": 6,
+                        "color": "#cbd5e1"
+                    },
+                    {
+                        "label": "40-59 ans",
+                        "value": 13,
+                        "color": "#cbd5e1"
+                    },
+                    {
+                        "label": "+ 75 ans",
+                        "value": 19,
+                        "color": "#1e293b"
+                    }
+                ],
+                "options": {
+                    "layout": "vertical",
+                    "suffix": "%"
+                }
+            },
+            "integrity": "verified",
+            "ref": {
+                "label": "Rapport 2024, Tab 2"
+            }
         },
         {
-            "id": "stat-3",
-            "text": "L'isolement n'est pas qu'un sentiment : c'est une absence de réseaux de sociabilité (famille, amis, voisins, collègues).",
-            "vizType": "network_void",
-            "ref_status": "ok",
-            "ref_label": "Définition FdF"
+            "id": "quotes",
+            "stepNumber": 7,
+            "title": "Voix",
+            "body": "Au quotidien, l'isolement se traduit par des journées entières sans parole échangée.",
+            "visual": {
+                "type": "quoteScene",
+                "data": [
+                    {
+                        "text": "Je peux passer trois jours sans que ma voix ne sorte. Parfois je parle à ma télé pour vérifier que je sais encore le faire.",
+                        "author": "Christiane, 74 ans"
+                    },
+                    {
+                        "text": "C'est le silence qui est le plus lourd. Pas le calme, le silence contraint.",
+                        "author": "Lucile, 32 ans"
+                    }
+                ]
+            },
+            "integrity": "extracted",
+            "ref": {
+                "label": "Témoignages qualitatifs"
+            }
         },
         {
-            "id": "stat-4",
-            "text": "En 2024, la précarité aggrave la situation. Les personnes aux revenus modestes sont 3x plus exposées.",
-            "vizType": "bar_poverty",
-            "ref_status": "to_check",
-            "ref_label": "Tableau 4.2 (consolidation)"
-        },
-        {
-            "id": "conclusion",
-            "text": "Alors en cette journée du câlin, n'oublions pas : un geste simple peut rompre, même un instant, le temps des solitudes.",
-            "vizType": "conclusion",
-            "ref_status": "ok",
-            "ref_label": "Conclusion"
-        },
-        {
-            "id": "credits",
-            "text": "Une narration basée sur les données de la Fondation de France.",
-            "vizType": "credits",
-            "ref_status": "ok",
-            "ref_label": ""
+            "id": "non_recours",
+            "stepNumber": 8,
+            "title": "Invisible",
+            "body": "Seulement une infime minorité des personnes isolées demande de l'aide. La stigmatisation reste forte.",
+            "visual": {
+                "type": "bigNumber",
+                "data": {
+                    "value": 3,
+                    "label": "Seulement 3% sollicitent une association.",
+                    "suffix": "%",
+                    "cta": "Rompre l'isolement"
+                }
+            },
+            "integrity": "to_check",
+            "ref": {
+                "label": "Estimation recoupée"
+            }
         }
     ]
 }

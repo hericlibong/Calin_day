@@ -12,17 +12,23 @@ export default function StepsColumn({ steps }) {
                     data-step={index}
                     className="step min-h-[80vh] flex flex-col justify-center p-6 transition-opacity duration-500 pointer-events-auto"
                 >
-                    <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-100">
-                        <h3 className="not-sr-only text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">
-                            Étape {index + 1}
-                        </h3>
-                        <p className="text-lg md:text-xl font-medium text-gray-800 leading-relaxed mb-4">
-                            {step.text}
+                    <div className="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-sm border border-slate-100">
+                        {step.title && step.title !== "Ouverture" && (
+                            <h3 className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-3">
+                                {step.title}
+                            </h3>
+                        )}
+                        <p className="text-lg md:text-xl font-medium text-brand-ink leading-relaxed mb-6">
+                            {step.body || step.text}
                         </p>
 
-                        {step.ref_status && (
-                            <div className="mt-2">
-                                <SourceBadge status={step.ref_status} label={step.ref_label} />
+                        {(step.integrity || step.ref_status) && step.id !== 'cover' && (
+                            <div className="mt-4 pt-4 border-t border-slate-50">
+                                <SourceBadge
+                                    integrity={step.integrity}
+                                    status={step.ref_status} // fallback
+                                    label={step.ref ? step.ref.label : step.ref_label}
+                                />
                             </div>
                         )}
                     </div>

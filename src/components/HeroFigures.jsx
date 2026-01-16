@@ -32,7 +32,9 @@ const CountUp = ({ end, duration = 2000 }) => {
 };
 
 export default function HeroFigures({ data }) {
-    const { figures, ref_status, ref_label } = data;
+    // Support new normalized structure or fallback
+    const figures = data.visual?.data?.figures || data.figures || [];
+    // Refs are now handled in StepsColumn, no need to display here to avoid duplicate
 
     return (
         <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
@@ -53,8 +55,9 @@ export default function HeroFigures({ data }) {
                 ))}
             </div>
 
-            <div className="absolute bottom-12 opacity-60">
-                <SourceBadge status={ref_status} label={ref_label} />
+            <div className="absolute bottom-12 opacity-40 text-xs font-sans text-brand-ink">
+                {/* Optional: Add a subtle credit if strictly needed, but Badge is on loop. Keeping blank to avoid duplicate or just a simple text */}
+                {/* <SourceBadge status={ref_status} label={ref_label} /> - Moved to Narrative Column */}
             </div>
         </div>
     );
