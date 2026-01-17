@@ -31,10 +31,14 @@ export default function ScrollytellingContainer() {
         };
     }, []);
 
+    // Check if the current step is a fullscreen layout
+    const activeStep = storyData.steps[activeStepIndex] || {};
+    const isFullscreen = activeStep.layout === 'fullscreen';
+
     return (
         <div className="relative w-full">
-            {/* Sticky Viz Panel - Background/Right */}
-            <div className="sticky top-0 h-screen w-full lg:w-1/2 lg:float-right -z-0 lg:z-0">
+            {/* Viz Panel - Adapts width based on layout */}
+            <div className={`sticky top-0 h-screen transition-all duration-500 ease-in-out ${isFullscreen ? 'w-full z-0' : 'w-full lg:w-1/2 lg:float-right lg:z-0'}`}>
                 <SceneRenderer
                     activeStepIndex={activeStepIndex}
                     data={storyData.steps}
@@ -42,8 +46,8 @@ export default function ScrollytellingContainer() {
                 />
             </div>
 
-            {/* Narrative Column - Left/Overlay */}
-            <div className="relative w-full lg:w-1/2 z-10">
+            {/* Narrative Column - Overlay */}
+            <div className={`relative w-full transition-all duration-500 ${isFullscreen ? 'z-10 pointer-events-none' : 'lg:w-1/2 z-10'}`}>
                 <StepsColumn steps={storyData.steps} />
             </div>
         </div>

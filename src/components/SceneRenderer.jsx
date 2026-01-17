@@ -1,6 +1,8 @@
 import React from 'react';
 import HeroFigures from './HeroFigures';
 import CoverScene from './CoverScene';
+import IntroCoverScene from './IntroCoverScene';
+import IntroTextScene from './IntroTextScene';
 import Definitions from './viz/Definitions';
 import SimpleBarChart from './viz/SimpleBarChart';
 import TypographyScene from './viz/TypographyScene';
@@ -22,18 +24,27 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
         transform: `translateY(${scrollProgress * 50}px)`,
     };
 
+    // Determine background: specialized scenes handle their own background
+    const isFullscreenScene = ['intro_cover', 'intro_text'].includes(vizType);
+
     return (
-        <div className="relative w-full h-full overflow-hidden bg-brand-bg transition-colors duration-700">
+        <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
             {/* Background Layer (Global Parallax Texture) */}
-            <div
-                className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"
-                style={bgStyle}
-            />
+            {!isFullscreenScene && (
+                <div
+                    className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"
+                    style={bgStyle}
+                />
+            )}
 
             {/* Foreground Layer (Viz) */}
             <div className="relative z-10 w-full h-full flex items-center justify-center transition-all duration-700 ease-in-out">
                 {vizType === 'cover' ? (
                     <CoverScene />
+                ) : vizType === 'intro_cover' ? (
+                    <IntroCoverScene data={vizData} />
+                ) : vizType === 'intro_text' ? (
+                    <IntroTextScene data={vizData} />
                 ) : vizType === 'hero_figures' ? (
                     <HeroFigures data={step} />
                 ) : vizType === 'definitions' ? (
