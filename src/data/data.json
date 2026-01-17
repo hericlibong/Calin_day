@@ -7,7 +7,7 @@
             "id": "cover",
             "stepNumber": 0,
             "title": "Ouverture",
-            "body": "Le 21 janvier marque la journée mondiale du câlin. Un symbole de chaleur humaine qui, par contraste, révèle l'ampleur de nos solitudes.",
+            "body": "Idée : La Journée mondiale du câlin met en lumière le besoin fondamental de lien.\nDonnée : Une date symbolique qui nous rappelle l'importance de la chaleur humaine.\nContexte : Le 21 janvier contraste violemment avec la réalité vécue par des millions.\nTransition : Derrière le symbole, une fracture sociale majeure se dessine.",
             "visual": {
                 "type": "cover",
                 "data": null
@@ -21,7 +21,7 @@
             "id": "hero",
             "stepNumber": 1,
             "title": "Le paradoxe",
-            "body": "Trois chiffres pour mesurer l’absence.",
+            "body": "Idée : L'isolement n'est pas un ressenti vague, c'est un phénomène massif.\nDonnée : 12% sont isolés, 24% se sentent seuls, 33% ont un sentiment d'abandon.\nContexte : Ces taux, issus de données extraites (rapport 2024), révèlent l'ampleur du mal.\nTransition : Pour comprendre ces chiffres, il faut d'abord distinguer deux notions.",
             "visual": {
                 "type": "hero_figures",
                 "data": {
@@ -53,7 +53,7 @@
             "id": "definitions",
             "stepNumber": 2,
             "title": "Nuances",
-            "body": "L'isolement est objectif : c'est l'absence de relations. La solitude est subjective : c'est le sentiment de manquer de lien. Les deux ne se recoupent pas toujours.",
+            "body": "Idée : Ne pas confondre \"être seul\" physiquement et \"se sentir seul\".\nDonnée : Deux réalités distinctes : l'isolement relationnel vs la solitude subjective.\nContexte : On peut être entouré mais se sentir seul, ou vivre seul sans en souffrir.\nTransition : Pourtant, certains facteurs objectifs, comme l'argent, aggravent tout.",
             "visual": {
                 "type": "definitions",
                 "data": {
@@ -76,7 +76,7 @@
             "id": "revenue",
             "stepNumber": 3,
             "title": "Inégalité",
-            "body": "La pauvreté est un accélérateur d'isolement. Les bas revenus sont deux fois plus exposés à l'absence totale de réseau.",
+            "body": "Idée : La précarité économique agit comme un puissant accélérateur d'isolement.\nDonnée : 17% d'isolement chez les bas revenus (<1000€) contre 7% chez les hauts revenus.\nContexte : Le manque de moyens réduit les sorties et les occasions de sociabilité.\nTransition : Au-delà de l'argent, le calendrier joue aussi un rôle crucial.",
             "visual": {
                 "type": "barSimple",
                 "data": [
@@ -105,7 +105,7 @@
             "id": "seasons",
             "stepNumber": 4,
             "title": "Moments",
-            "body": "Il y a des temps plus durs que d'autres. L'hiver et les fêtes de fin d'année cristallisent le sentiment de solitude.",
+            "body": "Idée : La solitude connaît une saisonnalité marquée par le froid et les normes.\nDonnée : 38% ressentent plus de solitude en hiver, 33% pendant les fêtes.\nContexte : Les célébrations collectives renvoient violemment les exclus à leur sort.\nTransition : Mais contrairement aux idées reçues, ce ne sont pas toujours les aînés.",
             "visual": {
                 "type": "stackNumbers",
                 "data": [
@@ -130,7 +130,7 @@
             "id": "age_sentiment",
             "stepNumber": 5,
             "title": "Générations",
-            "body": "Contrairement aux idées reçues, ce ne sont pas les plus âgés qui se sentent le plus seuls, mais les jeunes adultes, en pleine transition de vie.",
+            "body": "Idée : La souffrance de la solitude frappe désormais de plein fouet la jeunesse.\nDonnée : Le sentiment de solitude culmine à 35% chez les 25-39 ans.\nContexte : Transitions de vie et instabilité expliquent ce mal-être générationnel.\nTransition : Cependant, si on regarde l'absence objective de liens, la courbe s'inverse.",
             "visual": {
                 "type": "lineOrDot",
                 "data": [
@@ -165,7 +165,7 @@
             "id": "age_isolation",
             "stepNumber": 6,
             "title": "Réalité",
-            "body": "Pourtant, l'isolement relationnel objectif (ne voir personne) touche davantage les seniors. Le sentiment et la réalité divergent.",
+            "body": "Idée : La mort sociale réelle reste le fléau majeur du grand âge.\nDonnée : L'isolement objectif grimpe à 19% chez les +75 ans (contre 6% chez les jeunes).\nContexte : La perte d'autonomie et le veuvage réduisent mécaniquement le réseau.\nTransition : Derrière ces pourcentages froids, il y a le silence du quotidien.",
             "visual": {
                 "type": "barSimple",
                 "data": [
@@ -199,7 +199,7 @@
             "id": "quotes",
             "stepNumber": 7,
             "title": "Voix",
-            "body": "Au quotidien, l'isolement se traduit par des journées entières sans parole échangée.",
+            "body": "Idée : L'isolement se vit d'abord comme une disparition de la parole.\nDonnée : Des journées entières, parfois sans prononcer un seul mot à autrui.\nContexte : Le silence contraint devient une présence lourde, décrite par les témoins.\nTransition : Face à ce silence, la demande d'aide reste paradoxalement faible.",
             "visual": {
                 "type": "quoteScene",
                 "data": [
@@ -222,7 +222,7 @@
             "id": "non_recours",
             "stepNumber": 8,
             "title": "Invisible",
-            "body": "Seulement une infime minorité des personnes isolées demande de l'aide. La stigmatisation reste forte.",
+            "body": "Idée : L'isolement est un mal invisible car il n'ose pas dire son nom.\nDonnée : À peine 3% des personnes isolées sollicitent l'aide d'une association.\nContexte : La honte et la peur de la stigmatisation freinent massivement le recours.\nTransition : Et maintenant ? Briser le silence commence par un geste simple.",
             "visual": {
                 "type": "bigNumber",
                 "data": {
