@@ -25,7 +25,7 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
     };
 
     // Determine background: specialized scenes handle their own background
-    const isFullscreenScene = ['intro_cover', 'intro_text'].includes(vizType);
+    const isFullscreenScene = ['intro_cover', 'intro_text', 'intro_transition'].includes(vizType);
 
     return (
         <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
@@ -43,6 +43,8 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                     <CoverScene />
                 ) : vizType === 'intro_cover' ? (
                     <IntroCoverScene data={vizData} />
+                ) : vizType === 'intro_transition' ? (
+                    <IntroCoverScene data={{ ...vizData, isTransition: true }} />
                 ) : vizType === 'intro_text' ? (
                     <IntroTextScene data={vizData} />
                 ) : vizType === 'hero_figures' ? (

@@ -12,8 +12,8 @@ export default function StepsColumn({ steps }) {
                     <div
                         key={step.id}
                         data-step={index}
-                        className={`step flex flex-col justify-center p-6 transition-opacity duration-500 pointer-events-auto
-                        ${isFullscreen ? 'min-h-screen' : 'min-h-[80vh]'}`}
+                        className={`step flex flex-col justify-center p-6 transition-opacity duration-500 
+                        ${isFullscreen ? 'min-h-screen pointer-events-none' : 'min-h-[80vh] pointer-events-auto'}`}
                     >
                         {!isFullscreen ? (
                             <div className="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-sm border border-slate-100">
