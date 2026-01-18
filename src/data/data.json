@@ -40,24 +40,48 @@
             }
         },
         {
-            "id": "intro_text",
+            "id": "intro_text_1",
             "stepNumber": 3,
             "layout": "fullscreen",
             "visual": {
                 "type": "intro_text",
                 "data": {
+                    "stepType": "A",
+                    "avatar": "/images/author.png",
+                    "authorName": "Heric",
+                    "introTitle": "Pourquoi maintenant ?",
                     "paragraphs": [
-                        "Le 21 janvier, on célèbre le câlin. Un geste simple, presque léger.\nMais cette date tombe au milieu de l’hiver, quand les journées se raccourcissent et que le monde social se replie. C’est précisément là que l’isolement cesse d’être une idée abstraite : il devient un fait vécu, un rythme, parfois une routine silencieuse.",
-                        "Si je fais cette data-story maintenant, ce n’est pas pour “illustrer” une journée mondiale avec trois chiffres. C’est pour prendre ce prétexte de calendrier et regarder ce qu’on préfère éviter : comment une société moderne fabrique des vies où le lien se raréfie, et comment ce manque n’a pas la même forme selon l’âge, la situation sociale, ou le moment de l’année.",
-                        "Ce qui m’interroge le plus dans les données, ce n’est pas un pourcentage isolé.\nC’est la logique qui apparaît quand on met les figures bout à bout : des écarts qui se creusent, des moments où la solitude se réveille, des catégories que l’on n’attend pas, et surtout un paradoxe — celui d’un pays qui parle sans cesse de connexion, tout en laissant certains s’éloigner des autres dans la vie réelle.",
-                        "Dans les minutes qui suivent, je veux montrer trois choses :\n\nce que l’on mesure vraiment quand on parle d’isolement — et ce que ça ne dit pas,\n\noù se situent les fractures les plus nettes,\n\net pourquoi le “temps” (saisons, fêtes, semaines) joue un rôle central dans cette histoire.\n\nEnsuite seulement, on posera les définitions et la méthode : pour ne pas confondre solitude ressentie et isolement relationnel, et pour comprendre ce que racontent — et ce que cachent — les chiffres."
+                        "Le 21 janvier, on célèbre le câlin. Un geste simple, presque léger.",
+                        "Mais cette date tombe au milieu de l’hiver, quand les journées se raccourcissent et que le monde social se replie. C’est précisément là que l’isolement cesse d’être une idée abstraite : il devient un fait vécu, un rythme, parfois une routine silencieuse."
                     ]
                 }
             }
         },
         {
+            "id": "intro_text_2",
+            "stepNumber": 12,
+            "layout": "fullscreen",
+            "visual": {
+                "type": "intro_text",
+                "data": {
+                    "stepType": "B",
+                    "paragraphs": [
+                        "Si je fais cette data-story maintenant, ce n’est pas pour “illustrer” une journée mondiale avec trois chiffres. C’est pour prendre ce prétexte de calendrier et regarder ce qu’on préfère éviter : comment une société moderne fabrique des vies où le lien se raréfie, et comment ce manque n’a pas la même forme selon l’âge, la situation sociale, ou le moment de l’année.",
+                        "Ce qui m’interroge le plus dans les données, ce n’est pas un pourcentage isolé.\nC’est la logique qui apparaît quand on met les figures bout à bout : des écarts qui se creusent, des moments où la solitude se réveille, des catégories que l’on n’attend pas, et surtout un paradoxe — celui d’un pays qui parle sans cesse de connexion, tout en laissant certains s’éloigner des autres dans la vie réelle.",
+                        "Dans les minutes qui suivent, je veux montrer trois choses :"
+                    ],
+                    "listItems": [
+                        "ce que l’on mesure vraiment quand on parle d’isolement — et ce que ça ne dit pas,",
+                        "où se situent les fractures les plus nettes,",
+                        "et pourquoi le “temps” (saisons, fêtes, semaines) joue un rôle central dans cette histoire."
+                    ],
+                    "closing": "Ensuite seulement, on posera les définitions et la méthode : pour ne pas confondre solitude ressentie et isolement relationnel, et pour comprendre ce que racontent — et ce que cachent — les chiffres."
+                }
+            }
+        },
+        {
             "id": "hero",
-            "stepNumber": 4,
+            "stepNumber": 12,
             "title": "Le paradoxe",
             "body": "Idée : L'isolement n'est pas un ressenti vague, c'est un phénomène massif.\nDonnée : 12% sont isolés, 24% se sentent seuls, 33% ont un sentiment d'abandon.\nContexte : Ces taux, issus de données extraites (rapport 2024), révèlent l'ampleur du mal.\nTransition : Pour comprendre ces chiffres, il faut d'abord distinguer deux notions.",
             "visual": {
@@ -89,7 +113,7 @@
         },
         {
             "id": "definitions",
-            "stepNumber": 5,
+            "stepNumber": 12,
             "title": "Nuances",
             "body": "Idée : Ne pas confondre \"être seul\" physiquement et \"se sentir seul\".\nDonnée : Deux réalités distinctes : l'isolement relationnel vs la solitude subjective.\nContexte : On peut être entouré mais se sentir seul, ou vivre seul sans en souffrir.\nTransition : Pourtant, certains facteurs objectifs, comme l'argent, aggravent tout.",
             "visual": {
@@ -112,7 +136,7 @@
         },
         {
             "id": "revenue",
-            "stepNumber": 6,
+            "stepNumber": 12,
             "title": "Inégalité",
             "body": "Idée : La précarité économique agit comme un puissant accélérateur d'isolement.\nDonnée : 17% d'isolement chez les bas revenus (<1000€) contre 7% chez les hauts revenus.\nContexte : Le manque de moyens réduit les sorties et les occasions de sociabilité.\nTransition : Au-delà de l'argent, le calendrier joue aussi un rôle crucial.",
             "visual": {
@@ -141,7 +165,7 @@
         },
         {
             "id": "seasons",
-            "stepNumber": 7,
+            "stepNumber": 12,
             "title": "Moments",
             "body": "Idée : La solitude connaît une saisonnalité marquée par le froid et les normes.\nDonnée : 38% ressentent plus de solitude en hiver, 33% pendant les fêtes.\nContexte : Les célébrations collectives renvoient violemment les exclus à leur sort.\nTransition : Mais contrairement aux idées reçues, ce ne sont pas toujours les aînés.",
             "visual": {
@@ -166,7 +190,7 @@
         },
         {
             "id": "age_sentiment",
-            "stepNumber": 8,
+            "stepNumber": 12,
             "title": "Générations",
             "body": "Idée : La souffrance de la solitude frappe désormais de plein fouet la jeunesse.\nDonnée : Le sentiment de solitude culmine à 35% chez les 25-39 ans.\nContexte : Transitions de vie et instabilité expliquent ce mal-être générationnel.\nTransition : Cependant, si on regarde l'absence objective de liens, la courbe s'inverse.",
             "visual": {
@@ -201,7 +225,7 @@
         },
         {
             "id": "age_isolation",
-            "stepNumber": 9,
+            "stepNumber": 12,
             "title": "Réalité",
             "body": "Idée : La mort sociale réelle reste le fléau majeur du grand âge.\nDonnée : L'isolement objectif grimpe à 19% chez les +75 ans (contre 6% chez les jeunes).\nContexte : La perte d'autonomie et le veuvage réduisent mécaniquement le réseau.\nTransition : Derrière ces pourcentages froids, il y a le silence du quotidien.",
             "visual": {
@@ -235,7 +259,7 @@
         },
         {
             "id": "quotes",
-            "stepNumber": 10,
+            "stepNumber": 12,
             "title": "Voix",
             "body": "Idée : L'isolement se vit d'abord comme une disparition de la parole.\nDonnée : Des journées entières, parfois sans prononcer un seul mot à autrui.\nContexte : Le silence contraint devient une présence lourde, décrite par les témoins.\nTransition : Face à ce silence, la demande d'aide reste paradoxalement faible.",
             "visual": {
@@ -258,7 +282,7 @@
         },
         {
             "id": "non_recours",
-            "stepNumber": 11,
+            "stepNumber": 12,
             "title": "Invisible",
             "body": "Idée : L'isolement est un mal invisible car il n'ose pas dire son nom.\nDonnée : À peine 3% des personnes isolées sollicitent l'aide d'une association.\nContexte : La honte et la peur de la stigmatisation freinent massivement le recours.\nTransition : Et maintenant ? Briser le silence commence par un geste simple.",
             "visual": {
