@@ -40,7 +40,7 @@ export default function StepsColumn({ steps }) {
 
                         {/* Intro Text A (Author) */}
                         {isIntroTextA && (
-                            <div className="w-[90vw] max-w-2xl -ml-[calc(45vw-50%)] md:-ml-[calc(32rem-50%)] relative z-10 my-24 md:my-32 text-center">
+                            <div className="w-[90vw] max-w-xl -ml-[calc(45vw-50%)] md:-ml-[calc(28rem-50%)] relative z-10 flex flex-col items-center justify-center text-center">
                                 {/* Breakout layout logic approx */}
                                 <div className="flex flex-col items-center mb-10">
                                     <div className="w-24 h-24 rounded-full overflow-hidden shadow-md mb-4 border-2 border-white">
@@ -49,7 +49,7 @@ export default function StepsColumn({ steps }) {
                                     <h2 className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-2">{step.visual.data.authorName}</h2>
                                     <h3 className="font-serif text-3xl text-brand-dark italic">{step.visual.data.introTitle}</h3>
                                 </div>
-                                <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif text-center">
+                                <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif text-left">
                                     {step.visual.data.paragraphs && step.visual.data.paragraphs.map((para, idx) => (
                                         <p key={idx} className={idx === 0 ? "font-medium text-brand-dark" : "font-light"}>{para}</p>
                                     ))}
