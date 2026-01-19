@@ -2,45 +2,33 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function EditorialSlide({ data }) {
-    const { image, title, body } = data;
+    const { title, body } = data;
 
     // Helper to process newlines into paragraphs
     const paragraphs = body ? body.split('\n\n') : [];
 
+    // Use strictly the same background as IntroTextScene (#fdfbf6)
+    // Use the same max-width container (max-w-2xl)
     return (
-        <div className="relative w-full h-full bg-slate-100 overflow-hidden text-brand-ink">
-            {/* Background Image with Blur/Overlay */}
-            <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                    backgroundImage: `url(${image})`,
-                    filter: 'blur(8px) brightness(1.1)',
-                    transform: 'scale(1.1)'
-                }}
-            />
-            {/* Overlay for legibility */}
-            <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+        <div className="relative w-full h-full bg-[#fdfbf6] flex items-center justify-center overflow-hidden">
+            {/* Same container styles as IntroTextScene */}
+            <div className="w-full max-w-2xl px-6 md:px-0 relative z-10">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold mb-12 text-brand-dark leading-tight tracking-tight text-center">
+                    {title}
+                </h2>
 
-            {/* Content Container */}
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-6 md:px-12 py-12 overflow-y-auto">
-                <div className="max-w-3xl w-full">
-                    <h2 className="font-serif text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-brand-dark leading-tight tracking-tight">
-                        {title}
-                    </h2>
-
-                    <div className="space-y-6 text-lg md:text-xl leading-relaxed font-serif text-brand-ink/90">
-                        {paragraphs.map((para, idx) => (
-                            <p key={idx} className={idx === 0 ? "font-medium" : "font-light"}>
-                                {para}
-                            </p>
-                        ))}
-                    </div>
+                <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif">
+                    {paragraphs.map((para, idx) => (
+                        <p key={idx} className={idx === 0 ? "font-medium text-brand-dark" : "font-light"}>
+                            {para}
+                        </p>
+                    ))}
                 </div>
 
                 {/* Scroll Hint */}
-                <div className="mt-12 md:mt-16 flex flex-col items-center gap-2 animate-pulse text-brand-ink/50">
-                    <span className="text-xs uppercase tracking-widest font-medium">Faire défiler</span>
-                    <ChevronDown className="w-5 h-5" />
+                <div className="mt-16 flex flex-col items-center gap-2 text-brand-ink/30 animate-pulse">
+                    <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>
+                    <ChevronDown className="w-4 h-4" />
                 </div>
             </div>
         </div>
