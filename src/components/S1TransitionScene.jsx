@@ -2,62 +2,43 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function S1TransitionScene({ data, scrollProgress = 0 }) {
-    const { image, text } = data;
+    const { image } = data;
 
-    // Opacity interpolation logic
-    // We want the image to fade in, stay visible, then fade out.
-    // Range 0.0 - 0.2: Fade In
-    // Range 0.2 - 0.8: Visible
-    // Range 0.8 - 1.0: Fade Out
+    // Use scrollProgress ONLY for subtle animation of the BACKGROUND IMAGE.
+    // The text is now strictly in the foreground (StepsColumn), handled by native scrolling.
 
-    let opacity = 0;
-    if (scrollProgress < 0.2) {
-        opacity = scrollProgress / 0.2; // 0 to 1
-    } else if (scrollProgress < 0.8) {
-        opacity = 1;
-    } else {
-        opacity = 1 - ((scrollProgress - 0.8) / 0.2); // 1 to 0
-    }
-
-    // Subtle scale effect (zoom in slightly)
-    // 1.0 -> 1.05 over the full scroll
+    // Slight zoom effect to give life to the "sticky" moment
     const scale = 1 + (scrollProgress * 0.05);
+
+    // Opacity: Fade in initially, stay visible mainly.
+    // As it is sticky, we want it to be there. 
+    // The previous scene (Intro Text B) triggers this.
+    // The next scene (S1 Editorial) will handle its own entry.
+    // Let's just keep it simple: fully visible with zoom.
 
     return (
         <div className="relative w-full h-full bg-[#fdfbf6] flex flex-col items-center justify-center overflow-hidden">
 
-            {/* Sticky/Fixed container for the transition elements */}
+            {/* Sticky Background Image */}
             <div
-                className="relative w-full h-full flex flex-col items-center justify-center"
+                className="relative w-full h-full flex items-center justify-center p-8 md:p-0"
                 style={{
-                    opacity: opacity,
                     transform: `scale(${scale})`,
-                    transition: 'opacity 100ms linear, transform 100ms linear', // Smooth out micro-steps
-                    willChange: 'opacity, transform'
+                    transition: 'transform 100ms linear',
+                    willChange: 'transform'
                 }}
             >
-                {/* Image Container */}
-                <div className="relative w-full max-w-lg aspect-square md:aspect-[4/3] mb-8">
+                <div className="relative w-full max-w-xl aspect-square md:aspect-[4/3]">
                     <img
                         src={image}
                         alt="Transition"
                         className="w-full h-full object-contain mix-blend-multiply opacity-90"
                     />
                 </div>
-
-                {/* Text */}
-                {text && (
-                    <p className="font-serif text-xl md:text-2xl text-brand-dark italic mb-8 text-center px-4">
-                        {text}
-                    </p>
-                )}
             </div>
 
-            {/* Scroll Hint (Always visible or fades too? Let's keep it subtle independent or same fade) */}
-            <div
-                className="absolute bottom-12 flex flex-col items-center gap-2 text-brand-ink/30 animate-pulse"
-                style={{ opacity: Math.max(0, 1 - scrollProgress * 2) }} // Fade out quickly as we scroll down
-            >
+            {/* Scroll Hint (Fixed at bottom of this frame) */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-30 animate-pulse">
                 <ChevronDown className="w-5 h-5" />
             </div>
         </div>

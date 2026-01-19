@@ -52,7 +52,7 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                 ) : vizType === 'intro_text' ? (
                     <IntroTextScene data={vizData} />
                 ) : vizType === 's1_editorial' ? (
-                    <EditorialSlide data={vizData} />
+                    <S1TransitionScene data={{ ...vizData, mode: 'static' }} />
                 ) : vizType === 's1_transition' ? (
                     <S1TransitionScene data={vizData} scrollProgress={scrollProgress} />
                 ) : vizType === 's1_thresholds' ? (
