@@ -49,8 +49,8 @@
             }
         },
         {
-            "id": "intro_text_1",
-            "stepNumber": 11,
+            "id": "intro_text",
+            "stepNumber": 4,
             "layout": "fullscreen",
             "visual": {
                 "type": "intro_text",
@@ -61,20 +61,7 @@
                     "introTitle": "Pourquoi maintenant ?",
                     "paragraphs": [
                         "Le 21 janvier, on célèbre le câlin. Un geste simple, presque léger.",
-                        "Mais cette date tombe au milieu de l’hiver, quand les journées se raccourcissent et que le monde social se replie. C’est précisément là que l’isolement cesse d’être une idée abstraite : il devient un fait vécu, un rythme, parfois une routine silencieuse."
-                    ]
-                }
-            }
-        },
-        {
-            "id": "intro_text_2",
-            "stepNumber": 11,
-            "layout": "fullscreen",
-            "visual": {
-                "type": "intro_text",
-                "data": {
-                    "stepType": "B",
-                    "paragraphs": [
+                        "Mais cette date tombe au milieu de l’hiver, quand les journées se raccourcissent et que le monde social se replie. C’est précisément là que l’isolement cesse d’être une idée abstraite : il devient un fait vécu, un rythme, parfois une routine silencieuse.",
                         "Si je fais cette data-story maintenant, ce n’est pas pour “illustrer” une journée mondiale avec trois chiffres. C’est pour prendre ce prétexte de calendrier et regarder ce qu’on préfère éviter : comment une société moderne fabrique des vies où le lien se raréfie, et comment ce manque n’a pas la même forme selon l’âge, la situation sociale, ou le moment de l’année.",
                         "Ce qui m’interroge le plus dans les données, ce n’est pas un pourcentage isolé.\nC’est la logique qui apparaît quand on met les figures bout à bout : des écarts qui se creusent, des moments où la solitude se réveille, des catégories que l’on n’attend pas, et surtout un paradoxe — celui d’un pays qui parle sans cesse de connexion, tout en laissant certains s’éloigner des autres dans la vie réelle.",
                         "Dans les minutes qui suivent, je veux montrer trois choses :"

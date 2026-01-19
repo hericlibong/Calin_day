@@ -49,10 +49,20 @@ export default function StepsColumn({ steps }) {
                                     <h2 className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-2">{step.visual.data.authorName}</h2>
                                     <h3 className="font-serif text-3xl text-brand-dark italic">{step.visual.data.introTitle}</h3>
                                 </div>
-                                <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif text-left">
+                                <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif text-center">
                                     {step.visual.data.paragraphs && step.visual.data.paragraphs.map((para, idx) => (
                                         <p key={idx} className={idx === 0 ? "font-medium text-brand-dark" : "font-light"}>{para}</p>
                                     ))}
+                                    {step.visual.data.listItems && (
+                                        <ul className="list-disc list-inside mt-4 text-left max-w-md mx-auto">
+                                            {step.visual.data.listItems.map((item, idx) => (
+                                                <li key={idx} className="font-light">{item}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {step.visual.data.closing && (
+                                        <p className="font-medium text-brand-dark mt-4">{step.visual.data.closing}</p>
+                                    )}
                                 </div>
                             </div>
                         )}
