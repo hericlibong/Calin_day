@@ -76,7 +76,7 @@
             }
         },
         {
-            "id": "intro_image",
+            "id": "s1_interlude_image",
             "stepNumber": 5,
             "layout": "fullscreen",
             "visual": {

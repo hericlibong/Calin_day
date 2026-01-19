@@ -11,6 +11,7 @@ export default function StepsColumn({ steps }) {
                 const isFullscreen = step.layout === 'fullscreen';
                 const isIntroTextA = step.visual?.type === 'intro_text' && step.visual?.data?.stepType === 'A';
                 const isTransition = step.id === 's1_transition';
+                const isInterlude = step.id === 's1_interlude_image';
                 const isS1Editorial = step.visual?.type === 's1_editorial';
 
                 return (
@@ -20,11 +21,13 @@ export default function StepsColumn({ steps }) {
                         className={[
                             "step flex flex-col justify-center p-6 transition-opacity duration-500",
                             // Fullscreen “triggers” : on garde des hauteurs cohérentes
-                            (isFullscreen && !isIntroTextA && !isTransition && !isS1Editorial)
+                            (isFullscreen && !isIntroTextA && !isTransition && !isS1Editorial && !isInterlude)
                                 ? "min-h-screen pointer-events-none"
                                 : "min-h-[80vh] pointer-events-auto",
                             isTransition ? "min-h-[120vh]" : "",
+                            isIntroTextA ? "min-h-[120vh]" : "", // Increased breathing room for intro
                             isS1Editorial ? "min-h-screen z-20 relative" : "",
+                            isInterlude ? "min-h-[200vh] pointer-events-none" : "", // Sticky Interlude Duration
                         ].join(" ")}
                     >
                         {/* Standard Card Layout (colonne narrative classique) */}
