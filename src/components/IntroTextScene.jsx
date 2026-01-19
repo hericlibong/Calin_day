@@ -6,6 +6,14 @@ export default function IntroTextScene({ data }) {
     // Different layouts based on stepType ("A" or "B")
     // Both share the same container to maintain visual continuity
 
+    // For Step A, the content is handled by StepsColumn to allow native scrolling.
+    // IntroTextScene only provides the background.
+    if (stepType === 'A') {
+        return (
+            <div className="relative w-full h-full bg-[#fdfbf6]" />
+        );
+    }
+
     return (
         <div className="relative w-full h-full bg-[#fdfbf6] flex items-center justify-center overflow-hidden">
             <div className="w-full max-w-2xl px-6 md:px-0 relative z-10 transition-opacity duration-700 ease-in-out">
