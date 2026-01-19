@@ -50,7 +50,7 @@
         },
         {
             "id": "intro_text_1",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "layout": "fullscreen",
             "visual": {
                 "type": "intro_text",
@@ -68,7 +68,7 @@
         },
         {
             "id": "intro_text_2",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "layout": "fullscreen",
             "visual": {
                 "type": "intro_text",
@@ -89,63 +89,117 @@
             }
         },
         {
-            "id": "hero",
-            "stepNumber": 13,
-            "title": "Le paradoxe",
-            "body": "Idée : L'isolement n'est pas un ressenti vague, c'est un phénomène massif.\nDonnée : 12% sont isolés, 24% se sentent seuls, 33% ont un sentiment d'abandon.\nContexte : Ces taux, issus de données extraites (rapport 2024), révèlent l'ampleur du mal.\nTransition : Pour comprendre ces chiffres, il faut d'abord distinguer deux notions.",
+            "id": "s1_editorial",
+            "stepNumber": 5,
+            "layout": "fullscreen",
             "visual": {
-                "type": "hero_figures",
+                "type": "s1_editorial",
                 "data": {
-                    "figures": [
-                        {
-                            "val": 12,
-                            "label": "Isolement",
-                            "suffix": "%"
-                        },
-                        {
-                            "val": 24,
-                            "label": "Solitude",
-                            "suffix": "%"
-                        },
-                        {
-                            "val": 33,
-                            "label": "Abandon",
-                            "suffix": "%"
-                        }
-                    ]
+                    "image": "/images/seq1_placeholder_1768784123368.png",
+                    "title": "Nommer, sinon on raconte n’importe quoi",
+                    "body": "On parle souvent de “solitude” comme d’un malaise général, une humeur grise qui flotterait dans l’air. Mais si l’on veut écrire une histoire juste — et pas une page d’ambiance — il faut commencer par une discipline simple : nommer précisément ce que l’on prétend mesurer. C’est ce que force le rapport Solitudes 2024 : il ne se contente pas de dire que “les gens vont mal”, il sépare trois réalités et leur associe trois indicateurs. Voilà pourquoi, ici, trois mots deviennent des piliers : isolement, solitude, abandon. Pas pour faire joli. Parce que ce sont trois phénomènes distincts, et qu’ils n’appellent ni les mêmes lectures, ni les mêmes réponses.\n\nL’isolement relationnel, d’abord, c’est le fait brut : des liens qui manquent, des cercles qui se vident, des contacts qui n’arrivent plus. La solitude, ensuite, c’est le vécu : on peut être entouré et pourtant manquer — non pas de monde, mais de relation. Et puis il y a le sentiment d’abandon / d’exclusion / d’inutilité : une autre couche, plus sociale, plus politique aussi, quand la question n’est plus seulement “avec qui je parle”, mais “est-ce que je compte encore”. Si l’on ouvre cette séquence par ces trois mots, c’est pour éviter le flou. Pour donner au lecteur une boussole avant les chiffres, et pour annoncer ce que l’on va vraiment chercher : où la fracture se forme, chez qui elle s’aggrave, et à quel moment elle se réveille."
                 }
-            },
-            "integrity": "extracted",
-            "ref": {
-                "label": "Rapport Solitudes 2024"
             }
         },
         {
-            "id": "definitions",
-            "stepNumber": 13,
-            "title": "Nuances",
-            "body": "Idée : Ne pas confondre \"être seul\" physiquement et \"se sentir seul\".\nDonnée : Deux réalités distinctes : l'isolement relationnel vs la solitude subjective.\nContexte : On peut être entouré mais se sentir seul, ou vivre seul sans en souffrir.\nTransition : Pourtant, certains facteurs objectifs, comme l'argent, aggravent tout.",
+            "id": "s1_beat_1",
+            "stepNumber": 6,
+            "layout": "fullscreen",
             "visual": {
-                "type": "definitions",
+                "type": "s1_thresholds",
                 "data": {
-                    "left": {
-                        "term": "Isolement",
-                        "def": "Absence de réseaux sociaux (famille, amis, voisins...)"
-                    },
-                    "right": {
-                        "term": "Solitude",
-                        "def": "Sentiment de souffrir de manque de relations."
-                    }
+                    "beat": 1,
+                    "items": [
+                        {
+                            "val": 12,
+                            "fraction": "1 sur 8",
+                            "label": "L'Isolement relationnel",
+                            "def": "une réalité de liens qui manquent dans les réseaux du quotidien."
+                        },
+                        {
+                            "val": 24,
+                            "fraction": "1 sur 4",
+                            "label": "Solitude régulière",
+                            "def": "un vécu, pas forcément visible."
+                        },
+                        {
+                            "val": 33,
+                            "fraction": "1 sur 3",
+                            "label": "Abandon / exclusion / inutilité",
+                            "def": "une question de place sociale."
+                        }
+                    ],
+                    "beatText": "12% de la population est en isolement relationnel : une réalité de liens qui manquent dans les réseaux du quotidien."
                 }
-            },
-            "integrity": "verified",
-            "ref": {
-                "label": "Définitions FdF"
+            }
+        },
+        {
+            "id": "s1_beat_2",
+            "stepNumber": 7,
+            "layout": "fullscreen",
+            "visual": {
+                "type": "s1_thresholds",
+                "data": {
+                    "beat": 2,
+                    "items": [
+                        {
+                            "val": 12,
+                            "fraction": "1 sur 8",
+                            "label": "Isolement relationnel",
+                            "def": "une réalité de liens qui manquent dans les réseaux du quotidien."
+                        },
+                        {
+                            "val": 24,
+                            "fraction": "1 sur 4",
+                            "label": "Solitude régulière",
+                            "def": "un vécu, pas forcément visible."
+                        },
+                        {
+                            "val": 33,
+                            "fraction": "1 sur 3",
+                            "label": "Abandon / exclusion / inutilité",
+                            "def": "une question de place sociale."
+                        }
+                    ],
+                    "beatText": "24% déclarent se sentir régulièrement seuls : un vécu, pas forcément visible."
+                }
+            }
+        },
+        {
+            "id": "s1_beat_3",
+            "stepNumber": 8,
+            "layout": "fullscreen",
+            "visual": {
+                "type": "s1_thresholds",
+                "data": {
+                    "beat": 3,
+                    "items": [
+                        {
+                            "val": 12,
+                            "fraction": "1 sur 8",
+                            "label": "Isolement relationnel",
+                            "def": "une réalité de liens qui manquent dans les réseaux du quotidien."
+                        },
+                        {
+                            "val": 24,
+                            "fraction": "1 sur 4",
+                            "label": "Solitude régulière",
+                            "def": "un vécu, pas forcément visible."
+                        },
+                        {
+                            "val": 33,
+                            "fraction": "1 sur 3",
+                            "label": "Abandon / exclusion / inutilité",
+                            "def": "une question de place sociale."
+                        }
+                    ],
+                    "beatText": "33% disent se sentir abandonnés, exclus ou inutiles au moins de temps en temps : une question de place sociale."
+                }
             }
         },
         {
             "id": "revenue",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Inégalité",
             "body": "Idée : La précarité économique agit comme un puissant accélérateur d'isolement.\nDonnée : 17% d'isolement chez les bas revenus (<1000€) contre 7% chez les hauts revenus.\nContexte : Le manque de moyens réduit les sorties et les occasions de sociabilité.\nTransition : Au-delà de l'argent, le calendrier joue aussi un rôle crucial.",
             "visual": {
@@ -174,7 +228,7 @@
         },
         {
             "id": "seasons",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Moments",
             "body": "Idée : La solitude connaît une saisonnalité marquée par le froid et les normes.\nDonnée : 38% ressentent plus de solitude en hiver, 33% pendant les fêtes.\nContexte : Les célébrations collectives renvoient violemment les exclus à leur sort.\nTransition : Mais contrairement aux idées reçues, ce ne sont pas toujours les aînés.",
             "visual": {
@@ -199,7 +253,7 @@
         },
         {
             "id": "age_sentiment",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Générations",
             "body": "Idée : La souffrance de la solitude frappe désormais de plein fouet la jeunesse.\nDonnée : Le sentiment de solitude culmine à 35% chez les 25-39 ans.\nContexte : Transitions de vie et instabilité expliquent ce mal-être générationnel.\nTransition : Cependant, si on regarde l'absence objective de liens, la courbe s'inverse.",
             "visual": {
@@ -234,7 +288,7 @@
         },
         {
             "id": "age_isolation",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Réalité",
             "body": "Idée : La mort sociale réelle reste le fléau majeur du grand âge.\nDonnée : L'isolement objectif grimpe à 19% chez les +75 ans (contre 6% chez les jeunes).\nContexte : La perte d'autonomie et le veuvage réduisent mécaniquement le réseau.\nTransition : Derrière ces pourcentages froids, il y a le silence du quotidien.",
             "visual": {
@@ -268,7 +322,7 @@
         },
         {
             "id": "quotes",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Voix",
             "body": "Idée : L'isolement se vit d'abord comme une disparition de la parole.\nDonnée : Des journées entières, parfois sans prononcer un seul mot à autrui.\nContexte : Le silence contraint devient une présence lourde, décrite par les témoins.\nTransition : Face à ce silence, la demande d'aide reste paradoxalement faible.",
             "visual": {
@@ -291,7 +345,7 @@
         },
         {
             "id": "non_recours",
-            "stepNumber": 13,
+            "stepNumber": 11,
             "title": "Invisible",
             "body": "Idée : L'isolement est un mal invisible car il n'ose pas dire son nom.\nDonnée : À peine 3% des personnes isolées sollicitent l'aide d'une association.\nContexte : La honte et la peur de la stigmatisation freinent massivement le recours.\nTransition : Et maintenant ? Briser le silence commence par un geste simple.",
             "visual": {

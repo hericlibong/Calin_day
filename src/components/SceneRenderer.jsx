@@ -3,6 +3,9 @@ import HeroFigures from './HeroFigures';
 import CoverScene from './CoverScene';
 import IntroCoverScene from './IntroCoverScene';
 import IntroTextScene from './IntroTextScene';
+import EditorialStatement from './EditorialStatement';
+import EditorialSlide from './EditorialSlide';
+import ThreeThresholdsScene from './ThreeThresholdsScene';
 import Definitions from './viz/Definitions';
 import SimpleBarChart from './viz/SimpleBarChart';
 import TypographyScene from './viz/TypographyScene';
@@ -25,7 +28,7 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
     };
 
     // Determine background: specialized scenes handle their own background
-    const isFullscreenScene = ['intro_cover', 'intro_text', 'intro_transition'].includes(vizType);
+    const isFullscreenScene = ['intro_cover', 'intro_text', 'intro_transition', 's1_editorial', 's1_thresholds'].includes(vizType);
 
     return (
         <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
@@ -47,6 +50,10 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                     <IntroCoverScene data={{ ...vizData, isTransition: true }} />
                 ) : vizType === 'intro_text' ? (
                     <IntroTextScene data={vizData} />
+                ) : vizType === 's1_editorial' ? (
+                    <EditorialSlide data={vizData} />
+                ) : vizType === 's1_thresholds' ? (
+                    <ThreeThresholdsScene data={vizData} />
                 ) : vizType === 'hero_figures' ? (
                     <HeroFigures data={step} />
                 ) : vizType === 'definitions' ? (
