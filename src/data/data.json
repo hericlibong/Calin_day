@@ -89,21 +89,64 @@
             }
         },
         {
-            "id": "s1_editorial",
+            "id": "s1_transition",
             "stepNumber": 5,
+            "layout": "fullscreen",
+            "visual": {
+                "type": "s1_transition",
+                "data": {
+                    "image": "/images/silhouettes_squares_1768792077075.png",
+                    "text": "Trois mots. Trois mesures."
+                }
+            }
+        },
+        {
+            "id": "s1_editorial",
+            "stepNumber": 6,
             "layout": "fullscreen",
             "visual": {
                 "type": "s1_editorial",
                 "data": {
-                    "image": "/images/seq1_placeholder_1768784123368.png",
                     "title": "Nommer, sinon on raconte n’importe quoi",
                     "body": "On parle souvent de “solitude” comme d’un malaise général, une humeur grise qui flotterait dans l’air. Mais si l’on veut écrire une histoire juste — et pas une page d’ambiance — il faut commencer par une discipline simple : nommer précisément ce que l’on prétend mesurer. C’est ce que force le rapport Solitudes 2024 : il ne se contente pas de dire que “les gens vont mal”, il sépare trois réalités et leur associe trois indicateurs. Voilà pourquoi, ici, trois mots deviennent des piliers : isolement, solitude, abandon. Pas pour faire joli. Parce que ce sont trois phénomènes distincts, et qu’ils n’appellent ni les mêmes lectures, ni les mêmes réponses.\n\nL’isolement relationnel, d’abord, c’est le fait brut : des liens qui manquent, des cercles qui se vident, des contacts qui n’arrivent plus. La solitude, ensuite, c’est le vécu : on peut être entouré et pourtant manquer — non pas de monde, mais de relation. Et puis il y a le sentiment d’abandon / d’exclusion / d’inutilité : une autre couche, plus sociale, plus politique aussi, quand la question n’est plus seulement “avec qui je parle”, mais “est-ce que je compte encore”. Si l’on ouvre cette séquence par ces trois mots, c’est pour éviter le flou. Pour donner au lecteur une boussole avant les chiffres, et pour annoncer ce que l’on va vraiment chercher : où la fracture se forme, chez qui elle s’aggrave, et à quel moment elle se réveille."
                 }
             }
         },
         {
+            "id": "s1_beat_0",
+            "stepNumber": 9,
+            "layout": "fullscreen",
+            "visual": {
+                "type": "s1_thresholds",
+                "data": {
+                    "beat": 0,
+                    "items": [
+                        {
+                            "val": 12,
+                            "fraction": "1 sur 8",
+                            "label": "L'Isolement relationnel",
+                            "def": "une réalité de liens qui manquent dans les réseaux du quotidien."
+                        },
+                        {
+                            "val": 24,
+                            "fraction": "1 sur 4",
+                            "label": "Solitude régulière",
+                            "def": "un vécu, pas forcément visible."
+                        },
+                        {
+                            "val": 33,
+                            "fraction": "1 sur 3",
+                            "label": "Abandon / exclusion / inutilité",
+                            "def": "une question de place sociale."
+                        }
+                    ],
+                    "beatText": ""
+                }
+            }
+        },
+        {
             "id": "s1_beat_1",
-            "stepNumber": 6,
+            "stepNumber": 10,
             "layout": "fullscreen",
             "visual": {
                 "type": "s1_thresholds",
@@ -135,7 +178,7 @@
         },
         {
             "id": "s1_beat_2",
-            "stepNumber": 7,
+            "stepNumber": 9,
             "layout": "fullscreen",
             "visual": {
                 "type": "s1_thresholds",
@@ -167,7 +210,7 @@
         },
         {
             "id": "s1_beat_3",
-            "stepNumber": 8,
+            "stepNumber": 10,
             "layout": "fullscreen",
             "visual": {
                 "type": "s1_thresholds",
