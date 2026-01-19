@@ -76,14 +76,15 @@
             }
         },
         {
-            "id": "s1_transition",
+            "id": "intro_image",
             "stepNumber": 5,
             "layout": "fullscreen",
-            "body": "Trois mots.\nTrois mesures.",
             "visual": {
-                "type": "s1_transition",
+                "type": "intro_image",
                 "data": {
-                    "image": "/images/silhouettes_01.png"
+                    "src": "/images/silhouettes_01.png",
+                    "alt": "Silhouettes dans carrés",
+                    "caption": "Trois mots.\nTrois mesures."
                 }
             }
         },

@@ -3,6 +3,7 @@ import HeroFigures from './HeroFigures';
 import CoverScene from './CoverScene';
 import IntroCoverScene from './IntroCoverScene';
 import IntroTextScene from './IntroTextScene';
+import IntroImageScene from './IntroImageScene';
 import EditorialStatement from './EditorialStatement';
 import EditorialSlide from './EditorialSlide';
 import S1TransitionScene from './S1TransitionScene';
@@ -29,7 +30,15 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
     };
 
     // Determine background: specialized scenes handle their own background
-    const isFullscreenScene = ['intro_cover', 'intro_text', 'intro_transition', 's1_editorial', 's1_transition', 's1_thresholds'].includes(vizType);
+    const isFullscreenScene = [
+        'intro_cover',
+        'intro_text',
+        'intro_transition',
+        'intro_image',
+        's1_editorial',
+        's1_transition',
+        's1_thresholds'
+    ].includes(vizType);
 
     return (
         <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
@@ -51,6 +60,8 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                     <IntroCoverScene data={{ ...vizData, isTransition: true }} />
                 ) : vizType === 'intro_text' ? (
                     <IntroTextScene data={vizData} />
+                ) : vizType === 'intro_image' ? (
+                    <IntroImageScene data={vizData} />
                 ) : vizType === 's1_editorial' ? (
                     <S1TransitionScene data={{ ...vizData, mode: 'static' }} />
                 ) : vizType === 's1_transition' ? (
