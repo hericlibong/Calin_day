@@ -113,7 +113,12 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                     {/* Image : opacité progressive (au début = 0 => totalement invisible) */}
                     <div
                         className="absolute inset-0 z-0 pointer-events-none"
-                        style={{ opacity: introReveal, transition: 'opacity 220ms linear' }}
+                        style={{
+                                opacity: 1,
+                                clipPath: `inset(${(1 - introReveal) * 100}% 0 0 0)`,
+                                transition: 'clip-path 0ms linear',
+                                }}
+
                     >
                         <IntroImageScene data={interludeImageData} showCaption={false} />
                     </div>
