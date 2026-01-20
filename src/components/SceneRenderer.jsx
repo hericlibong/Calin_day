@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroFigures from './HeroFigures';
 import CoverScene from './CoverScene';
 import IntroCoverScene from './IntroCoverScene';
@@ -37,13 +37,62 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
         's1_thresholds'
     ].includes(vizType);
 
-    // ✅ Récupère l’image de référence (s1_interlude_image) pour la révéler dès l’intro
+    // Image de référence (s1_interlude_image) qu'on révèle pendant intro_text
     const interludeStep = data.find((s) => s.id === 's1_interlude_image');
     const interludeImageData = interludeStep?.visual?.data;
 
-    // ✅ Pendant intro_text : on veut déjà voir l’image en fond (sans légende)
-    const revealInterludeDuringIntro =
-        vizType === 'intro_text' && interludeImageData?.src;
+    // --- Révélation progressive pendant intro_text (zéro apparition au début) ---
+    const [introReveal, setIntroReveal] = useState(0);
+
+    useEffect(() => {
+        // On ne calcule que pendant intro_text
+        if (vizType !== 'intro_text') {
+            setIntroReveal(0);
+            return;
+        }
+
+        const clamp01 = (v) => Math.max(0, Math.min(1, v));
+
+        const computeReveal = () => {
+            const el = document.querySelector(`.step[data-step="${activeStepIndex}"]`);
+            if (!el) {
+                setIntroReveal(0);
+                return;
+            }
+
+            const rect = el.getBoundingClientRect();
+            const vh = window.innerHeight || 1;
+
+            /**
+             * Progression basée sur le "montée du bloc" :
+             * - rect.top > 0 : le bloc n'a pas encore atteint le haut -> 0
+             * - rect.top < 0 : le bloc a commencé à sortir par le haut -> ça monte
+             *
+             * On normalise par la hauteur du viewport pour avoir une mesure stable.
+             */
+            const movedUp = clamp01((-rect.top) / vh);
+
+            /**
+             * PARAMETRES A NOTER (réglage)
+             * On veut que l'image reste invisible au début,
+             * puis apparaisse seulement quand le texte a déjà commencé à sortir.
+             */
+            const start = 0.35; // image commence à apparaître quand le bloc a monté ~35% d'un écran
+            const end = 0.85;   // image pleinement visible quand le bloc a monté ~85% d'un écran
+
+            const t = (movedUp - start) / (end - start);
+            setIntroReveal(clamp01(t));
+        };
+
+        window.addEventListener('scroll', computeReveal, { passive: true });
+        window.addEventListener('resize', computeReveal);
+        computeReveal();
+
+        return () => {
+            window.removeEventListener('scroll', computeReveal);
+            window.removeEventListener('resize', computeReveal);
+        };
+    }, [vizType, activeStepIndex]);
 
     return (
         <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
@@ -55,11 +104,20 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                 />
             )}
 
-            {/* ✅ Fond image “déjà là” pendant intro_text : supprime le blanc, révèle l’image */}
-            {revealInterludeDuringIntro && (
-                <div className="absolute inset-0 z-0">
-                    <IntroImageScene data={interludeImageData} showCaption={false} />
-                </div>
+            {/* ✅ Pendant intro_text : fond beige au départ, puis révélation progressive de l'image */}
+            {vizType === 'intro_text' && interludeImageData?.src && (
+                <>
+                    {/* Fond beige constant (évite tout flash / blanc) */}
+                    <div className="absolute inset-0 z-0 bg-[#fdfbf6]" />
+
+                    {/* Image : opacité progressive (au début = 0 => totalement invisible) */}
+                    <div
+                        className="absolute inset-0 z-0 pointer-events-none"
+                        style={{ opacity: introReveal, transition: 'opacity 220ms linear' }}
+                    >
+                        <IntroImageScene data={interludeImageData} showCaption={false} />
+                    </div>
+                </>
             )}
 
             {/* Foreground Layer (Viz) */}
@@ -71,9 +129,7 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                 ) : vizType === 'intro_transition' ? (
                     <IntroCoverScene data={{ ...vizData, isTransition: true }} />
                 ) : vizType === 'intro_text' ? (
-                    // ✅ On n’affiche plus l’intro dans le panneau de droite,
-                    // car elle est déjà dans StepsColumn (colonne narrative).
-                    // Le fond image est déjà derrière, donc plus de blanc.
+                    // Intro déjà rendu dans StepsColumn : ici on laisse vide
                     <div className="w-full h-full" />
                 ) : vizType === 'intro_image' ? (
                     <IntroImageScene data={vizData} />
