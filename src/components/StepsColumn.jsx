@@ -13,12 +13,15 @@ export default function StepsColumn({ steps }) {
                 const isInterlude = step.id === 's1_interlude_image';
                 const isS1Editorial = step.visual?.type === 's1_editorial';
 
+                const isTwin = isIntroTextA || isS1Editorial;
+
                 return (
                     <div
                         key={step.id}
                         data-step={index}
                         className={[
-                            "step flex flex-col justify-center p-6 transition-opacity duration-500",
+                            "step flex flex-col justify-center transition-opacity duration-500",
+                            isTwin ? "p-0" : "p-6",
                             // Fullscreen triggers (invisibles) : uniquement ceux qui n'ont pas de contenu texte dédié
                             (isFullscreen && !isIntroTextA && !isTransition && !isS1Editorial && !isInterlude)
                                 ? "min-h-screen pointer-events-none"
@@ -59,7 +62,7 @@ export default function StepsColumn({ steps }) {
 
                         {/* ✅ INTRO TEXT A — JUMEAU de S1 EDITORIAL (mêmes classes de bloc plein écran) */}
                         {isIntroTextA && (
-                            <div className="w-full min-h-screen flex items-center justify-center bg-[#fdfbf6] shadow-xl relative z-20">
+                            <div className="w-full min-h-screen flex items-center justify-center bg-[#fdfbf6] relative z-20">
                                 <div className="max-w-2xl px-6 w-full">
                                     <div className="flex flex-col items-center mb-10">
                                         <div className="w-24 h-24 rounded-full overflow-hidden shadow-md mb-4 border-2 border-white">
@@ -117,7 +120,7 @@ export default function StepsColumn({ steps }) {
 
                         {/* S1 Editorial - plein écran, centré proprement */}
                         {isS1Editorial && (
-                            <div className="w-full min-h-screen flex items-center justify-center bg-[#fdfbf6] shadow-xl relative z-20">
+                            <div className="w-full min-h-screen flex items-center justify-center bg-[#fdfbf6] relative z-20">
                                 <div className="max-w-2xl px-6 w-full">
                                     <h2 className="font-serif text-3xl md:text-5xl font-bold mb-12 text-brand-dark leading-tight tracking-tight text-center">
                                         {step.visual.data.title}
