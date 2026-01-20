@@ -3,7 +3,6 @@ import SourceBadge from './SourceBadge';
 
 export default function StepsColumn({ steps }) {
     return (
-        // IMPORTANT: on ne bride plus le wrapper global (plus de max-w-md ici)
         <div className="relative z-10 w-full pointer-events-none">
             <div className="pb-[40vh]" /> {/* Top Spacer */}
 
@@ -20,14 +19,17 @@ export default function StepsColumn({ steps }) {
                         data-step={index}
                         className={[
                             "step flex flex-col justify-center p-6 transition-opacity duration-500",
-                            // Fullscreen “triggers” : on garde des hauteurs cohérentes
+                            // Fullscreen triggers (invisibles) : uniquement ceux qui n'ont pas de contenu texte dédié
                             (isFullscreen && !isIntroTextA && !isTransition && !isS1Editorial && !isInterlude)
                                 ? "min-h-screen pointer-events-none"
                                 : "min-h-[80vh] pointer-events-auto",
-                            isTransition ? "min-h-[120vh]" : "",
-                            isIntroTextA ? "min-h-[120vh]" : "", // Increased breathing room for intro
+
+                            // ✅ JUMEAUX : IntroTextA doit avoir EXACTEMENT les mêmes dimensions/stacking que S1 editorial
+                            isIntroTextA ? "min-h-screen z-20 relative" : "",
                             isS1Editorial ? "min-h-screen z-20 relative" : "",
-                            isInterlude ? "min-h-[200vh] pointer-events-none" : "", // Sticky Interlude Duration
+
+                            isTransition ? "min-h-[120vh]" : "",
+                            isInterlude ? "min-h-[200vh] pointer-events-none" : "", // durée du fond sticky interlude
                         ].join(" ")}
                     >
                         {/* Standard Card Layout (colonne narrative classique) */}
@@ -55,10 +57,10 @@ export default function StepsColumn({ steps }) {
                             </div>
                         )}
 
-                        {/* Intro Text A (Author) - centré proprement */}
+                        {/* ✅ INTRO TEXT A — JUMEAU de S1 EDITORIAL (mêmes classes de bloc plein écran) */}
                         {isIntroTextA && (
-                            <div className="w-full min-h-screen flex items-center justify-center">
-                                <div className="w-full max-w-2xl px-6 flex flex-col items-center justify-center text-center">
+                            <div className="w-full min-h-screen flex items-center justify-center bg-[#fdfbf6] shadow-xl relative z-20">
+                                <div className="max-w-2xl px-6 w-full">
                                     <div className="flex flex-col items-center mb-10">
                                         <div className="w-24 h-24 rounded-full overflow-hidden shadow-md mb-4 border-2 border-white">
                                             <img
@@ -70,13 +72,14 @@ export default function StepsColumn({ steps }) {
                                         <h2 className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-2">
                                             {step.visual.data.authorName}
                                         </h2>
-                                        <h3 className="font-serif text-3xl text-brand-dark italic">
+
+                                        {/* ✅ même gabarit de titre que s1_editorial */}
+                                        <h3 className="font-serif text-3xl md:text-5xl font-bold mb-2 text-brand-dark leading-tight tracking-tight text-center">
                                             {step.visual.data.introTitle}
                                         </h3>
                                     </div>
 
-                                    {/* IMPORTANT: ici tu peux choisir text-center si tu veux une colonne vraiment centrée */}
-                                    <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif text-left w-full">
+                                    <div className="space-y-6 text-lg md:text-xl text-brand-ink leading-relaxed font-serif">
                                         {step.visual.data.paragraphs?.map((para, idx) => (
                                             <p key={idx} className={idx === 0 ? "font-medium text-brand-dark" : "font-light"}>
                                                 {para}
@@ -84,7 +87,7 @@ export default function StepsColumn({ steps }) {
                                         ))}
 
                                         {step.visual.data.listItems && (
-                                            <ul className="list-disc list-inside mt-4 text-left max-w-md mx-auto">
+                                            <ul className="list-disc list-inside mt-4 max-w-md mx-auto">
                                                 {step.visual.data.listItems.map((item, idx) => (
                                                     <li key={idx} className="font-light">{item}</li>
                                                 ))}
