@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function IntroImageScene({ data }) {
+export default function IntroImageScene({ data, showCaption = true }) {
     const src = data?.src || "/images/silhouettes_01.png";
     const alt = data?.alt || "Transition";
     const caption = data?.caption || "";
@@ -18,7 +18,7 @@ export default function IntroImageScene({ data }) {
             <div className="absolute inset-0 bg-[#fdfbf6]/20" />
 
             {/* Optionnel : petit texte de transition */}
-            {caption && (
+            {showCaption && caption && (
                 <div className="absolute bottom-14 left-1/2 -translate-x-1/2 text-center w-full px-4">
                     <p className="font-serif text-3xl md:text-4xl italic text-brand-dark whitespace-pre-wrap">
                         {caption}

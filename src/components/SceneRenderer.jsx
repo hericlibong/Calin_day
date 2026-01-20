@@ -16,9 +16,6 @@ import QuotesScene from './viz/QuotesScene';
 
 export default function SceneRenderer({ activeStepIndex, data, scrollProgress }) {
     const step = data[activeStepIndex] || {};
-    // Normalized data structure: visual.type, visual.data, visual.options
-    // But we need to handle legacy/mixed if any, though we rewrote data.json.
-    // The 'step' object here is the full step object.
 
     const vizType = step.visual?.type || step.vizType;
     const vizData = step.visual?.data || step.data || step;
@@ -29,7 +26,7 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
         transform: `translateY(${scrollProgress * 50}px)`,
     };
 
-    // Determine background: specialized scenes handle their own background
+    // Fullscreen scenes (no default bg-brand-bg)
     const isFullscreenScene = [
         'intro_cover',
         'intro_text',
@@ -39,6 +36,14 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
         's1_transition',
         's1_thresholds'
     ].includes(vizType);
+
+    // ✅ Récupère l’image de référence (s1_interlude_image) pour la révéler dès l’intro
+    const interludeStep = data.find((s) => s.id === 's1_interlude_image');
+    const interludeImageData = interludeStep?.visual?.data;
+
+    // ✅ Pendant intro_text : on veut déjà voir l’image en fond (sans légende)
+    const revealInterludeDuringIntro =
+        vizType === 'intro_text' && interludeImageData?.src;
 
     return (
         <div className={`relative w-full h-full overflow-hidden transition-colors duration-700 ${isFullscreenScene ? '' : 'bg-brand-bg'}`}>
@@ -50,6 +55,13 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                 />
             )}
 
+            {/* ✅ Fond image “déjà là” pendant intro_text : supprime le blanc, révèle l’image */}
+            {revealInterludeDuringIntro && (
+                <div className="absolute inset-0 z-0">
+                    <IntroImageScene data={interludeImageData} showCaption={false} />
+                </div>
+            )}
+
             {/* Foreground Layer (Viz) */}
             <div className="relative z-10 w-full h-full flex items-center justify-center transition-all duration-700 ease-in-out">
                 {vizType === 'cover' ? (
@@ -59,7 +71,10 @@ export default function SceneRenderer({ activeStepIndex, data, scrollProgress })
                 ) : vizType === 'intro_transition' ? (
                     <IntroCoverScene data={{ ...vizData, isTransition: true }} />
                 ) : vizType === 'intro_text' ? (
-                    <IntroTextScene data={vizData} />
+                    // ✅ On n’affiche plus l’intro dans le panneau de droite,
+                    // car elle est déjà dans StepsColumn (colonne narrative).
+                    // Le fond image est déjà derrière, donc plus de blanc.
+                    <div className="w-full h-full" />
                 ) : vizType === 'intro_image' ? (
                     <IntroImageScene data={vizData} />
                 ) : vizType === 's1_editorial' ? (
