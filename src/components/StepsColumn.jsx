@@ -19,6 +19,7 @@ export default function StepsColumn({ steps }) {
                     <div
                         key={step.id}
                         data-step={index}
+                        data-step-id={step.id}
                         className={[
                             "step flex flex-col justify-center transition-opacity duration-500",
                             isTwin ? "p-0" : "p-6",
