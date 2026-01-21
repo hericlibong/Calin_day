@@ -82,7 +82,7 @@
             "visual": {
                 "type": "intro_image",
                 "data": {
-                    "src": "/images/silhouettes_01.png",
+                    "src": "/images/cover_winter.png",
                     "alt": "Silhouettes dans carrés",
                     "caption": "Trois mots.\nTrois mesures."
                 }

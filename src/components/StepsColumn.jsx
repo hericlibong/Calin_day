@@ -30,7 +30,7 @@ export default function StepsColumn({ steps }) {
 
                             // ✅ JUMEAUX : IntroTextA doit avoir EXACTEMENT les mêmes dimensions/stacking que S1 editorial
                             isIntroTextA ? "min-h-screen z-20 relative" : "",
-                            isS1Editorial ? "min-h-screen z-20 relative" : "",
+                            isS1Editorial ? "min-h-[200vh] z-20 relative" : "",
 
                             isTransition ? "min-h-[120vh]" : "",
                             isInterlude ? "min-h-[200vh] pointer-events-none" : "", // durée du fond sticky interlude
